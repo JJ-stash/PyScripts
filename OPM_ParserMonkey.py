@@ -20,7 +20,7 @@ def imagedown(url, folder):
 
     page = 0
     for image in images:
-    	page += 1
+        page += 1
         name = f'Page {page}'
         link = image['src']
         with open(name + '.jpg', 'wb') as f:
