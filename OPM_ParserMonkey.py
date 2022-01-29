@@ -17,8 +17,8 @@ def imagedown(url, folder):
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
     images = soup.find_all('img')
-    
-    page = 0
+
+	page = 0
     for image in images:
     	page += 1
         name = f'Page {page}'
@@ -41,7 +41,7 @@ def pdfmaker(folder):
 	all_images = sorted(all_images, key=lambda x: float(x[4:-4]))
 	print(all_images)
 
-	for img in img_list:
+	for img in all_images:
 		pdf.add_page()
 		pdf.image(img, 0, 0, w=210, h=297)
 
